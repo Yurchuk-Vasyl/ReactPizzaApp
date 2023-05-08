@@ -1,0 +1,38 @@
+.pagination {
+  :global {
+    .selected a {
+      color: white;
+      background-color: #fe5f1e;
+    }
+    .disabled a {
+      border: 1px solid grey;
+      color: grey;
+      cursor: auto;
+    }
+  }
+  li {
+    display: inline-block;
+    & a {
+      color: #fe5f1e;
+      font-weight: 700;
+      padding: 10px;
+      border-radius: 30px;
+      border: 1px solid #fe5f1e;
+      display: inline-flex;
+      width: 45px;
+      height: 45px;
+      justify-content: center;
+      align-items: center;
+      margin-right: 15px;
+      transition: all ease 0.3s;
+      cursor: pointer;
+    }
+
+    &:hover {
+      & a {
+        color: white;
+        background-color: #fe5f1e;
+      }
+    }
+  }
+}

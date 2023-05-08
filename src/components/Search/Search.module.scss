@@ -1,0 +1,45 @@
+.input__container {
+  position: relative;
+  left: -120px;
+}
+.input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 20px 12px 32px;
+  width: 400px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-image: url('./img/searchIcon.svg');
+  left: 0;
+  top: 0;
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+.searchIcon {
+  width: 22px;
+  height: 22px;
+  opacity: 0.5;
+  position: relative;
+  transform: translate(100%, 30%);
+  left: 5px;
+  top: 50%;
+}
+
+.clearIcon {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 5%;
+  color: #3c3c3c;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all ease 0.3s;
+  &_none {
+    display: none;
+  }
+  &:hover {
+    transform: scale(1.1) translate(0, -50%);
+  }
+}
