@@ -1,1 +1,1 @@
-export const HOME_LOCATION = '/';
+export const HOME_LOCATION = '/ReactPizzaApp/';
