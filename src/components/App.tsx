@@ -11,10 +11,19 @@ import { HOME_LOCATION } from '../constants/homeLocation';
 
 import '../scss/app.scss';
 
-const CartPizza = React.lazy(() => import('../pages/CartPizza/CartPizza'));
-const FullPizza = React.lazy(() => import('../pages/FullPizza'));
-const NotFoundPage = React.lazy(() => import('../pages/NotFoundPage'));
-const Home = React.lazy(() => import('../pages/Home'));
+const CartPizza = React.lazy(
+  () =>
+    import(/* webpackChunkname: "CartPizza"*/ '../pages/CartPizza/CartPizza')
+);
+const FullPizza = React.lazy(
+  () => import(/* webpackChunkname: "FullPizzaPage"*/ '../pages/FullPizza')
+);
+const NotFoundPage = React.lazy(
+  () => import(/* webpackChunkname: "NotFoundPage"*/ '../pages/NotFoundPage')
+);
+const Home = React.lazy(
+  () => import(/* webpackChunkname: "HomePage"*/ '../pages/Home')
+);
 
 function App() {
   return (

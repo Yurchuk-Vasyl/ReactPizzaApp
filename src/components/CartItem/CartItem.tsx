@@ -11,6 +11,7 @@ import {
 import minus from './img/minus.svg';
 import close from './img/close.svg';
 import plus from './img/plus.svg';
+import { Link } from 'react-router-dom';
 
 type CartItemProps = {
   id: string;
@@ -55,9 +56,9 @@ const CartItem: React.FC<CartItemProps> = ({
 
   return (
     <div className="cart__item">
-      <div className="cart__item-img">
+      <Link to={'../pizza/' + id} className="cart__item-img">
         <img className="pizza-block__image" src={img} alt="Pizza" />
-      </div>
+      </Link>
       <div className="cart__item-info">
         <h3>{title}</h3>
         <p>
