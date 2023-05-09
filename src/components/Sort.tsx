@@ -19,9 +19,7 @@ export const list: Sort[] = [
 const SortComp: React.FC<SortProps> = memo(({ value }) => {
   const sortRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState<boolean>(false);
-
   const dispatch = useDispatch();
-
   useEffect(() => {
     const handleClickSort = (e: MouseEvent) => {
       if (e.target && sortRef.current) {

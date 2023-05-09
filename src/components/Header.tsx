@@ -6,7 +6,7 @@ import Search from './Search/Search';
 
 import { selectCart } from '../store/slices/cart/selectors';
 
-import { HOME_LOCATION } from '../constants/homeLocation';
+import { HOME_LOCATION, HOME_LOCATION_NAME } from '../constants/homeLocation';
 
 import pizzaLogo from '../static/pizza-logo.svg';
 
@@ -41,9 +41,9 @@ const Header: React.FC = () => {
             </div>
           </div>
         </Link>
-        {location.pathname === HOME_LOCATION && <Search />}
+        {location.pathname === HOME_LOCATION_NAME && <Search />}
         <div className="header__cart">
-          {location.pathname === HOME_LOCATION && (
+          {location.pathname === HOME_LOCATION_NAME && (
             <Link to="cart" className="button button--cart">
               <span>{totalPrice}₴</span>
               <div className="button__delimiter"></div>

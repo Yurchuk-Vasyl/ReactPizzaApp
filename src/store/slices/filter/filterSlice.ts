@@ -37,9 +37,7 @@ export const filterSlice = createSlice({
     ) {
       state.currentPage = Number(action.payload.currentPage);
       state.categoryId = Number(action.payload.categoryId);
-      if (state.sortType.sortProperty === action.payload.sort.sortProperty) {
-        state.sortType.sortProperty = action.payload.sort.sortProperty;
-      }
+      state.sortType = action.payload.sort;
     },
   },
 });
