@@ -1,18 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
-
-import { Sort, SortPropertyEnum } from '../store/slices/filterSlice';
-
-type SortItem = {
-  name: string;
-  sortProperty: SortPropertyEnum;
-};
+import { useState, useEffect, useRef, memo } from 'react';
+import { setSort } from '../store/slices/filter/filterSlice';
+import { useDispatch } from 'react-redux';
+import { Sort, SortPropertyEnum } from '../store/slices/filter/types';
 
 type SortProps = {
   value: { sortProperty: string; name: string };
-  onChangeSort: (obj: Sort) => void;
 };
 
-export const list: SortItem[] = [
+export const list: Sort[] = [
   { sortProperty: SortPropertyEnum.RATING_DESC, name: 'популярности(desk)' },
   { sortProperty: SortPropertyEnum.RATING_ASC, name: 'популярности(ask)' },
   { sortProperty: SortPropertyEnum.PRICE_DESC, name: 'цене(desk)' },
@@ -21,10 +16,11 @@ export const list: SortItem[] = [
   { sortProperty: SortPropertyEnum.TITLE_ASC, name: 'алфавиту(ask)' },
 ];
 
-const SortComp: React.FC<SortProps> = ({ value, onChangeSort }) => {
+const SortComp: React.FC<SortProps> = memo(({ value }) => {
   const sortRef = useRef<HTMLDivElement>(null);
-
   const [active, setActive] = useState<boolean>(false);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleClickSort = (e: MouseEvent) => {
@@ -47,8 +43,8 @@ const SortComp: React.FC<SortProps> = ({ value, onChangeSort }) => {
     };
   }, [active]);
 
-  const onClickListItem = (obj: SortItem) => {
-    onChangeSort(obj);
+  const onClickListItem = (obj: Sort) => {
+    dispatch(setSort(obj));
     setActive(false);
   };
 
@@ -94,6 +90,6 @@ const SortComp: React.FC<SortProps> = ({ value, onChangeSort }) => {
       )}
     </div>
   );
-};
+});
 
 export default SortComp;

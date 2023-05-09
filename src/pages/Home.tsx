@@ -1,6 +1,6 @@
 import qs from 'qs';
 import { useSelector } from 'react-redux';
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Categories from '../components/Categories';
@@ -13,19 +13,15 @@ import { useAppDispatch } from '../store/store';
 
 import {
   setCategoryId,
-  setSort,
   setCurrentPage,
-  selectFilter,
-  Sort,
   setFilters,
-  SortPropertyEnum,
-} from '../store/slices/filterSlice';
+} from '../store/slices/filter/filterSlice';
 
-import {
-  fetchPizzas,
-  selectPizzasData,
-  Status,
-} from '../store/slices/pizzasSlice';
+import { fetchPizzas } from '../store/slices/pizza/pizzasSlice';
+import { Sort } from '../store/slices/filter/types';
+import { selectFilter } from '../store/slices/filter/selectors';
+import { selectPizzasData } from '../store/slices/pizza/selectors';
+import { Status } from '../store/slices/pizza/types';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -39,13 +35,9 @@ const Home: React.FC = () => {
 
   const { status, itemsPizza } = useSelector(selectPizzasData);
 
-  const onChangeCategory = (id: number) => {
+  const onChangeCategory = useCallback((id: number) => {
     dispatch(setCategoryId(id));
-  };
-
-  const onChangeSort = (obj: Sort) => {
-    dispatch(setSort(obj));
-  };
+  }, []);
 
   const onChangePage = (number: number) => {
     dispatch(setCurrentPage(number));
@@ -96,7 +88,6 @@ const Home: React.FC = () => {
         currentPage,
       });
       navigate(`?${queryString}`);
-      console.log(3);
     }
     isMounted.current = true;
   }, [currentPage, categoryId, sortType.sortProperty]);
@@ -104,7 +95,7 @@ const Home: React.FC = () => {
     <div className="container">
       <div className="content__top">
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
-        <SortComp value={sortType} onChangeSort={(obj) => onChangeSort(obj)} />
+        <SortComp value={sortType} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       {status === Status.ERROR ? (

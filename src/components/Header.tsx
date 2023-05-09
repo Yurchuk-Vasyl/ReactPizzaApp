@@ -1,16 +1,26 @@
+import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import Search from './Search/Search';
 
-import { selectCart } from '../store/slices/cartSlice';
+import { selectCart } from '../store/slices/cart/selectors';
 
 import { HOME_LOCATION } from '../constants/homeLocation';
 
 import pizzaLogo from '../static/pizza-logo.svg';
 
-function Header() {
+const Header: React.FC = () => {
   const { items, totalPrice } = useSelector(selectCart);
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    if (isMounted) {
+      const json = JSON.stringify(items);
+      localStorage.setItem('cartPizzas', json);
+    }
+    isMounted.current = true;
+  }, [items]);
 
   const location = useLocation();
 
@@ -31,7 +41,7 @@ function Header() {
             </div>
           </div>
         </Link>
-        <Search />
+        {location.pathname === HOME_LOCATION && <Search />}
         <div className="header__cart">
           {location.pathname === HOME_LOCATION && (
             <Link to="cart" className="button button--cart">
@@ -73,6 +83,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default Header;

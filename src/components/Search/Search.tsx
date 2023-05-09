@@ -1,17 +1,16 @@
 import React from 'react';
-import { useRef, useCallback, useState } from 'react';
+import { useRef, useCallback, useState, memo } from 'react';
 import { useDispatch } from 'react-redux';
-// @ts-ignore
 import debounce from 'lodash.debounce';
 
-import { setSearchValue } from '../../store/slices/filterSlice';
+import { setSearchValue } from '../../store/slices/filter/filterSlice';
 
 import searchIcon from './img/searchIcon.svg';
 import clearIconActive from './img/closeActive.svg';
 
 import styles from './Search.module.scss';
 
-const Search = () => {
+const Search: React.FC = memo(() => {
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
 
@@ -53,6 +52,6 @@ const Search = () => {
       />
     </div>
   );
-};
+});
 
 export default Search;

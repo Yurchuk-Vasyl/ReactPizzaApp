@@ -6,7 +6,11 @@ const CartEmpty = () => {
   return (
     <div className="container container--cart">
       <div className="cart cart--empty">
-        <h2>Корзина пустая 😕</h2>
+        <div className="cart--empty__title">
+          <h2>Корзина пустая</h2>
+          <div className="cart--empty__icon">😕</div>
+        </div>
+
         <p>
           Вероятней всего, вы не заказывали ещё пиццу.
           <br />

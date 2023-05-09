@@ -1,12 +1,23 @@
 .input__container {
   position: relative;
-  left: -120px;
+  flex: 0 1 45%;
+  @media (max-width: 1100px) {
+    order: 1;
+    flex: 0 0 50%;
+    display: block;
+    margin: 0 auto;
+  }
 }
 .input {
+  display: block;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 12px 20px 12px 32px;
-  width: 400px;
   border-radius: 10px;
+  min-width: 300px;
+  @media (max-width: 500px) {
+    min-width: auto;
+  }
+  width: 100%;
   font-size: 16px;
   background-image: url('./img/searchIcon.svg');
   left: 0;
@@ -20,10 +31,10 @@
   width: 22px;
   height: 22px;
   opacity: 0.5;
-  position: relative;
-  transform: translate(100%, 30%);
-  left: 5px;
+  position: absolute;
+  left: 7px;
   top: 50%;
+  transform: translate(0, -50%);
 }
 
 .clearIcon {

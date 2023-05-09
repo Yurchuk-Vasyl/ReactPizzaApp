@@ -5,10 +5,11 @@ import { Link } from 'react-router-dom';
 import CartItem from '../../components/CartItem/CartItem';
 import CartEmpty from '../../components/CartEmpty/CartEmpty';
 
-import { clearItems, selectCart } from '../../store/slices/cartSlice';
+import { clearItems } from '../../store/slices/cart/cartSlice';
 
 import cart from './img/cart.svg';
 import bin from './img/bin.svg';
+import { selectCart } from '../../store/slices/cart/selectors';
 
 // type itemsProps =  {sum: number; item: { count: number }}[];
 

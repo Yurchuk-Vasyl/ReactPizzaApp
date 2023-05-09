@@ -1,7 +1,12 @@
 import { useDispatch } from 'react-redux';
+import clsx from 'clsx';
 
 import React from 'react';
-import { addItem, removeItem, clearItem } from '../../store/slices/cartSlice';
+import {
+  addItem,
+  removeItem,
+  clearItem,
+} from '../../store/slices/cart/cartSlice';
 
 import minus from './img/minus.svg';
 import close from './img/close.svg';
@@ -62,7 +67,10 @@ const CartItem: React.FC<CartItemProps> = ({
       <div className="cart__item-count">
         <div
           onClick={onClickMinus}
-          className="button button--outline button--circle cart__item-count-minus"
+          className={clsx(
+            'button button--outline button--circle cart__item-count-minus',
+            { 'cart__item-count-minus--disabled': count === 1 }
+          )}
         >
           <img src={minus} alt="minus" />
         </div>

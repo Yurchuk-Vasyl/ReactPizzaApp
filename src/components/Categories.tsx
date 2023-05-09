@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 const categories = [
   'Все',
   'Мясные',
@@ -12,24 +14,26 @@ type CategoriesProps = {
   onChangeCategory: (i: number) => void;
 };
 
-const Categories: React.FC<CategoriesProps> = ({ value, onChangeCategory }) => {
-  return (
-    <div className="categories">
-      <ul>
-        {categories.map((item, index) => {
-          return (
-            <li
-              key={index}
-              onClick={() => onChangeCategory(index)}
-              className={value === index ? 'active' : ''}
-            >
-              {item}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-};
+const Categories: React.FC<CategoriesProps> = memo(
+  ({ value, onChangeCategory }) => {
+    return (
+      <div className="categories">
+        <ul>
+          {categories.map((item, index) => {
+            return (
+              <li
+                key={index}
+                onClick={() => onChangeCategory(index)}
+                className={value === index ? 'active' : ''}
+              >
+                {item}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }
+);
 
 export default Categories;

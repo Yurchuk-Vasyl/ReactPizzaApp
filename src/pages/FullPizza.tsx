@@ -28,9 +28,20 @@ const FullPizza: React.FC = () => {
   return (
     <>
       <div className="container">
-        <img src={pizza.imageUrl} alt="pizza" />
-        <h2>{pizza.name}</h2>
-        <h4>{pizza.price}₴</h4>
+        <div className="fullpizza">
+          <img className="fullpizza__image" src={pizza.imageUrl} alt="pizza" />
+          <div className="fullpizza__info">
+            <h2 className="fullpizza__title">Назва : {pizza.name}</h2>
+            <div className="fullpizza__price">Ціна :{pizza.price}₴</div>
+            <div className="fullpizza__text">
+              Lorem Ipsum - это текст-"рыба", часто используемый в печати и
+              вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов
+              на латинице с начала XVI века. В то время некий безымянный
+              печатник создал большую коллекцию размеров и форм шрифтов,
+              используя Lorem Ipsum для распечатки образцов.
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
