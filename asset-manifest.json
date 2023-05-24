@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/ReactPizzaApp/static/css/main.c106818e.css",
+    "main.js": "/ReactPizzaApp/static/js/main.fc04d16c.js",
+    "static/js/270.4e3a4fc6.chunk.js": "/ReactPizzaApp/static/js/270.4e3a4fc6.chunk.js",
+    "static/js/870.fb819438.chunk.js": "/ReactPizzaApp/static/js/870.fb819438.chunk.js",
+    "static/css/680.0f717b7b.chunk.css": "/ReactPizzaApp/static/css/680.0f717b7b.chunk.css",
+    "static/js/680.baa684eb.chunk.js": "/ReactPizzaApp/static/js/680.baa684eb.chunk.js",
+    "static/css/317.77032432.chunk.css": "/ReactPizzaApp/static/css/317.77032432.chunk.css",
+    "static/js/317.5d5f26ec.chunk.js": "/ReactPizzaApp/static/js/317.5d5f26ec.chunk.js",
+    "static/js/880.3f216c24.chunk.js": "/ReactPizzaApp/static/js/880.3f216c24.chunk.js",
+    "static/media/shopping.png": "/ReactPizzaApp/static/media/shopping.229bc82b8da1acd9c951.png",
+    "static/media/pizza-logo.svg": "/ReactPizzaApp/static/media/pizza-logo.56ac87032d8f6fdf863326acd06c0d97.svg",
+    "static/media/cart.svg": "/ReactPizzaApp/static/media/cart.7cfef9d8ddfde8a8b2fe1c622e946df8.svg",
+    "static/media/sad.svg": "/ReactPizzaApp/static/media/sad.754f04b0fe9824e3c7f8a9f7db86cd89.svg",
+    "static/media/bin.svg": "/ReactPizzaApp/static/media/bin.ccf29d52eaea46d285e2678755a3021a.svg",
+    "static/media/searchIcon.svg": "/ReactPizzaApp/static/media/searchIcon.cd744139372dfc6091eb1869d82355f9.svg",
+    "static/media/plus.svg": "/ReactPizzaApp/static/media/plus.d38d6ff6a2ed76a2b17cb98ffb539651.svg",
+    "static/media/close.svg": "/ReactPizzaApp/static/media/close.d284416893badc86651d6320d11d1554.svg",
+    "static/media/closeActive.svg": "/ReactPizzaApp/static/media/closeActive.bbde8ea773fec84f5eaad380a24d61cc.svg",
+    "static/media/minus.svg": "/ReactPizzaApp/static/media/minus.02177f1522f4a0b7eaca6981a38423eb.svg",
+    "index.html": "/ReactPizzaApp/index.html",
+    "main.c106818e.css.map": "/ReactPizzaApp/static/css/main.c106818e.css.map",
+    "main.fc04d16c.js.map": "/ReactPizzaApp/static/js/main.fc04d16c.js.map",
+    "270.4e3a4fc6.chunk.js.map": "/ReactPizzaApp/static/js/270.4e3a4fc6.chunk.js.map",
+    "870.fb819438.chunk.js.map": "/ReactPizzaApp/static/js/870.fb819438.chunk.js.map",
+    "680.0f717b7b.chunk.css.map": "/ReactPizzaApp/static/css/680.0f717b7b.chunk.css.map",
+    "680.baa684eb.chunk.js.map": "/ReactPizzaApp/static/js/680.baa684eb.chunk.js.map",
+    "317.77032432.chunk.css.map": "/ReactPizzaApp/static/css/317.77032432.chunk.css.map",
+    "317.5d5f26ec.chunk.js.map": "/ReactPizzaApp/static/js/317.5d5f26ec.chunk.js.map",
+    "880.3f216c24.chunk.js.map": "/ReactPizzaApp/static/js/880.3f216c24.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c106818e.css",
+    "static/js/main.fc04d16c.js"
+  ]
+}
