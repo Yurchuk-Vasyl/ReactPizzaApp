@@ -1,2 +1,2 @@
 export const API_PIZZA_DATA =
-  'https://64627c4c4dca1a6613479a2a.mockapi.io/items';
+  'https://644d4f61cfdddac970a2158a.mockapi.io/items';

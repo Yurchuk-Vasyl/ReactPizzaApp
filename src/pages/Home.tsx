@@ -22,6 +22,7 @@ import { Sort } from '../store/slices/filter/types';
 import { selectFilter } from '../store/slices/filter/selectors';
 import { selectPizzasData } from '../store/slices/pizza/selectors';
 import { Status } from '../store/slices/pizza/types';
+import CartItem from './../components/CartItem/CartItem';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
